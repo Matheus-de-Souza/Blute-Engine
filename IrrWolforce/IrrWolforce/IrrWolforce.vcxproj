@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F829781B-3C0E-45F5-8235-2389BAD1CB91}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>IrrWolforce</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\..\bin\Debug\</OutDir>
+    <ExecutablePath>$(VCInstallDir)bin;$(WindowsSdkDir)bin\NETFX 4.0 Tools;$(WindowsSdkDir)bin;$(VSInstallDir)Common7\Tools\bin;$(VSInstallDir)Common7\tools;$(VSInstallDir)Common7\ide;$(ProgramFiles)\HTML Help Workshop;$(FrameworkSDKDir)\bin;$(MSBuildToolsPath32);$(VSInstallDir);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH)</ExecutablePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\..\bin\Release\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;IRRWOLFORCE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\boost_1_35_0\;..\..\lua5_1_4\include;..\..\Diluculum-0.5.5\include;..\..\Wolforce\Wolforce;..\..\irrlicht-1.7.2\include;..\..\irrKlang-1.3.0\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\..\lua5_1_4\;..\..\Diluculum-0.5.5\bin\Debug;..\..\lib\Debug;..\..\irrKlang-1.3.0\lib\Win32-visualStudio;..\..\irrlicht-1.7.2\lib\Win32 Debug-visualstudio</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Wolforce.lib;Irrlicht.lib;irrKlang.lib;diluculum.lib;lua51.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ImportLibrary>..\..\lib\Debug\IrrWolforce.lib</ImportLibrary>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;IRRWOLFORCE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\boost_1_35_0\;..\..\lua5_1_4\include;..\..\Diluculum-0.5.5\include;..\..\Wolforce\Wolforce;..\..\irrlicht-1.7.2\include;..\..\irrKlang-1.3.0\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>Wolforce.lib;Irrlicht.lib;irrKlang.lib;diluculum.lib;lua51.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\lua5_1_4\;..\..\Diluculum-0.5.5\bin\Release;..\..\lib\Release;..\..\irrKlang-1.3.0\lib\Win32-visualStudio;..\..\irrlicht-1.7.2\lib\Win32 Release-visualstudio</AdditionalLibraryDirectories>
+      <ImportLibrary>..\..\lib\Release\IrrWolforce.lib</ImportLibrary>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="dllIrrDefine.h" />
+    <ClInclude Include="IrrAnimatedMesh.h" />
+    <ClInclude Include="IrrCamera.h" />
+    <ClInclude Include="IrrCollisionManager.h" />
+    <ClInclude Include="IrrEngineStrategy.h" />
+    <ClInclude Include="IrrGameObjectImpl.h" />
+    <ClInclude Include="IrrGUIEnvironment.h" />
+    <ClInclude Include="IrrInput.h" />
+    <ClInclude Include="irrKlangSceneNode.h" />
+    <ClInclude Include="IrrLevel.h" />
+    <ClInclude Include="IrrMesh.h" />
+    <ClInclude Include="IrrParticles.h" />
+    <ClInclude Include="IrrScene.h" />
+    <ClInclude Include="IrrSphere.h" />
+    <ClInclude Include="IrrWolforce.h" />
+    <ClInclude Include="LuaGameObject.hpp" />
+    <ClInclude Include="LuaInput.hpp" />
+    <ClInclude Include="LuaVirtualMachine.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="IrrAnimatedMesh.cpp" />
+    <ClCompile Include="IrrCamera.cpp" />
+    <ClCompile Include="IrrCollisionManager.cpp" />
+    <ClCompile Include="IrrEngineStrategy.cpp" />
+    <ClCompile Include="IrrGameObjectImpl.cpp" />
+    <ClCompile Include="IrrGUIEnvironment.cpp" />
+    <ClCompile Include="IrrInput.cpp" />
+    <ClCompile Include="irrKlangSceneNode.cpp" />
+    <ClCompile Include="IrrLevel.cpp" />
+    <ClCompile Include="IrrMesh.cpp" />
+    <ClCompile Include="IrrParticles.cpp" />
+    <ClCompile Include="IrrScene.cpp" />
+    <ClCompile Include="IrrSphere.cpp" />
+    <ClCompile Include="LuaVirtualMachine.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,44 @@
+﻿Build started 04/11/2012 16:03:29.
+     1>Project "C:\Users\ACER\Documents\GitHub\test\g0_2012\Diluculum-0.5.5\diluc\diluc.vcxproj" on node 5 (rebuild target(s)).
+     1>InitializeBuildStatus:
+         Creating "Debug\Diluculum-0.5.5.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I..\..\lua5_1_4\include /I..\include\ /I..\..\boost_1_35_0\ /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ..\Sources\InternalUtils.cpp ..\Sources\LuaExceptions.cpp ..\Sources\LuaFunction.cpp ..\Sources\LuaState.cpp ..\Sources\LuaUserData.cpp ..\Sources\LuaUtils.cpp ..\Sources\LuaValue.cpp ..\Sources\LuaVariable.cpp ..\Sources\LuaWrappers.cpp
+         LuaWrappers.cpp
+         Unknown compiler version - please run the configure tests and report the results
+         LuaVariable.cpp
+         Unknown compiler version - please run the configure tests and report the results
+         LuaValue.cpp
+         Unknown compiler version - please run the configure tests and report the results
+         LuaUtils.cpp
+         Unknown compiler version - please run the configure tests and report the results
+         LuaUserData.cpp
+         Unknown compiler version - please run the configure tests and report the results
+         LuaState.cpp
+         Unknown compiler version - please run the configure tests and report the results
+         LuaFunction.cpp
+         Unknown compiler version - please run the configure tests and report the results
+         LuaExceptions.cpp
+         Unknown compiler version - please run the configure tests and report the results
+         InternalUtils.cpp
+         Unknown compiler version - please run the configure tests and report the results
+         Generating Code...
+       Lib:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:"..\bin\Debug\diluculum.lib" lua51.lib /LIBPATH:..\..\lua5_1_4\ /NOLOGO Debug\InternalUtils.obj
+         Debug\LuaExceptions.obj
+         Debug\LuaFunction.obj
+         Debug\LuaState.obj
+         Debug\LuaUserData.obj
+         Debug\LuaUtils.obj
+         Debug\LuaValue.obj
+         Debug\LuaVariable.obj
+         Debug\LuaWrappers.obj
+         diluc.vcxproj -> C:\Users\ACER\Documents\GitHub\test\g0_2012\Diluculum-0.5.5\diluc\..\bin\Debug\diluculum.lib
+       FinalizeBuildStatus:
+         Deleting file "Debug\Diluculum-0.5.5.unsuccessfulbuild".
+         Touching "Debug\Diluculum-0.5.5.lastbuildstate".
+     1>Done Building Project "C:\Users\ACER\Documents\GitHub\test\g0_2012\Diluculum-0.5.5\diluc\diluc.vcxproj" (rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:01:36.57

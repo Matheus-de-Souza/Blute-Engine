@@ -1,0 +1,17 @@
+# 3ds Max Wavefront OBJ Exporter v0.97b - (c)2007 guruware
+# File Created: 19.11.2011 23:47:10
+
+newmtl Arch_Glass
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.3804 0.3804 0.3804
+	Kd 0.3804 0.3804 0.3804
+	Ks 0.7290 0.7290 0.7290
+	Ke 0.0000 0.0000 0.0000
+	map_Ka 4597940325_9aa7005c88_COLOR.png
+	map_Kd 4597940325_9aa7005c88_COLOR.png
+	map_bump -bm 0.3000 -s 1.0000 3.0000 1.0000 4597940325_9aa7005c88_OCC.jpg
