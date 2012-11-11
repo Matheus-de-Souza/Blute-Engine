@@ -10,3 +10,15 @@
 *.lai
 *.la
 *.a
+
+#visual studio temporary files
+*.obj
+*.log
+*.tlog
+*.sdf
+*.opensdf
+*.exe
+
+#vim temporary files
+tags
+*.sw[a-z]
