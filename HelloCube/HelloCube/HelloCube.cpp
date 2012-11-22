@@ -10,7 +10,8 @@ using namespace std;
 
 class MyBehavior: public Behavior{
 public:
-
+	
+	void onCollide(GameObject * other){}
         void update(){
                 if(Input::getButton("fire1")){
                         gameObject->translate(5.0,0.0,0.0);
@@ -25,8 +26,15 @@ private:
         float x;
 };
 
-class PlayerBehavior: public Behavior{
+class PlayerBehavior: public Behavior {
 public:
+	int colisoes;
+	PlayerBehavior()
+		:colisoes(0)
+	{}
+	void onCollide(GameObject * other){
+		printf("colisoes : %d\n", colisoes++);
+	}
     void update(){
 		if(Input::getButton("fire1")){
 			//gameObject->getAnimation()->play("test");
@@ -50,7 +58,8 @@ class BackgroundBehaviour : public Behavior
 {
 private:
 	Vector position;
-
+	
+	void onCollide(GameObject * other){}
 	void update()
 	{
 		gameObject->translate(0,0,0.1f);
@@ -91,6 +100,9 @@ private:
 		gameObject->setRotation(rotation);
 		gameObject->translate(posIncrement.x,posIncrement.y,posIncrement.z);
 	}
+	
+
+	void onCollide(GameObject * other){}
 };
 
 void main(){
@@ -106,29 +118,12 @@ void main(){
         Engine *engine = Engine::GetInstance();
 
 		engine->setWindowName(L"Test scene");
-
-		//Usando scripts em Lua!
-		try{
-			//Teste de um arquivo de configuração
-			//ScriptMachine *sm = engine->getScriptMachine();
-			//sm->loadFile("../media/config.lua");
-			//int v = sm->getInt("teste");
-			//cout << "teste=" << v << endl;
-			//GameObject *go = sm->getGameObject("go");
-			//cout << "nome do go=" << *(go->getName()) << endl;
-
-			//Fazendo setup das teclas
-		//	sm->loadFile("../media/input.lua");
-		}
-		catch(const runtime_error& e){
-			std::cout << e.what() << endl;
-		}
-
-		Scene *scene = engine->createScene();
 		
-		GameObject * background = scene->addAnimatedMesh("../Scenes/OBJ/Background/Background.obj",new Vector(10,5,5));
-		background->setRotation(Vector(0,0,90));
-		background->addBehaviour(new BackgroundBehaviour());
+		Scene *scene = engine->createScene();
+
+		//GameObject * background = scene->addAnimatedMesh("../Scenes/OBJ/Background/Background.obj",new Vector(30,5,5));
+		//background->setRotation(Vector(0,0,90));
+		//background->addBehaviour(new BackgroundBehaviour());
 
 		GameObject *player = scene->addAnimatedMesh("../Scenes/OBJ/Player/Player.obj",new Vector(15,5,5));
 
@@ -136,6 +131,7 @@ void main(){
 	    player->addBehaviour(new PlayerBehavior());
 		player->setPosition(Vector(-25,30,-150));
 		player->setRotation(Vector(0,-90,0));
+		player->setName("player");
 
 		GameObject *cam = scene->addCamera(new Vector(-150,50,-150),new Vector(80,50,-150));
 		cam->getCamera()->lookAt(Vector(-100,30,-150));
@@ -146,13 +142,14 @@ void main(){
 		//cube->addBehaviour(new MyBehavior());
 		//cube->setActive(false);
 
-		for(int i = 0;i != 50; ++i)
-		{
-			GameObject * obstacle = scene->addAnimatedMesh("../Scenes/OBJ/MeteoroM/Meteoro_M.obj",
-															new Vector(-50, -100 + rand() % 200, - 500 + rand() % 1000));
-			obstacle->addBehaviour(new ObstaclesBehaviour(Vector((rand() % 360) / 100.0f,(rand() % 360) / 100.0f,
-																 (rand() % 360) / 100.0f), Vector(0, (- 100 + rand() % 200) / 1000.0f, ( 200 - rand() % 100) / 1000.0f)));
-		}
+		//for(int i = 0;i != 10; ++i)
+		//{
+		//	GameObject * obstacle = scene->addAnimatedMesh("../Scenes/OBJ/MeteoroM/Meteoro_M.obj",
+		//													new Vector(-50, -100 + rand() % 200, - 500 + rand() % 1000));
+		//	obstacle->setName("obstaculo");
+		//	obstacle->addBehaviour(new ObstaclesBehaviour(Vector((rand() % 360) / 100.0f,(rand() % 360) / 100.0f,
+		//														 (rand() % 360) / 100.0f), Vector(0, (- 100 + rand() % 200) / 1000.0f, ( 200 - rand() % 100) / 1000.0f)));
+		//}
 
 	   engine->loop();
 

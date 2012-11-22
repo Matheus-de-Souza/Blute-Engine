@@ -50,10 +50,13 @@ Engine::Engine(){
 	if(strategy->init()){
 		//deu erro
 	}
-	currentCollisionManager = NULL;
+
 	this->currentScene = NULL;
 	this->currentGUI = NULL;
 	this->currentLevel = NULL;
+	
+	this->currentCollisionManager = NULL;
+	this->currentCollisionManager = getCollisionManager();;
 }
 
 Engine *Engine::GetInstance()
@@ -176,7 +179,6 @@ void Engine::setWindowName(wchar_t *name)
 
 CollisionManager *Engine::getCollisionManager()
 {
-	
 	if(currentCollisionManager == NULL)
     {
         this->setCurrentCollisionManager(Engine::strategy->getCollisionManager());

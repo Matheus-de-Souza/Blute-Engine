@@ -11,7 +11,8 @@ namespace WolfEngine{
 	public:
 		virtual void setCollider(GameObject *level, bool opt=false) = 0;
 		virtual void addResponse(GameObject *level, GameObject *target, Vector radius, Vector offset) = 0;
-		virtual void createLevel(GameObject *target)=0;
+		virtual void createLevel(GameObject *target) = 0;
+		virtual void checkCollisions(std::vector<GameObject*> objects) = 0;
 		
 		/*virtual void setSelectors() = 0;
         virtual void setSelector(GameObject *) = 0;

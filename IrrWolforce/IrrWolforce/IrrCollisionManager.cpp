@@ -6,6 +6,9 @@
 
 #include <iostream>
 
+#include <stdio.h>
+#include <windows.h>
+#include <process.h> 
 
 using namespace IrrWolforce;
 
@@ -62,6 +65,32 @@ void IrrCollisionManager::createLevel(GameObject *target){
 	smgr->addOctreeSceneNode( scene->getMesh());			
 	this->setCollider(target,true);
 }
+
+void IrrCollisionManager::checkCollisions(std::vector<GameObject*> objects)
+{
+	vector<GameObject*>::iterator i;
+	vector<GameObject*>::iterator j;
+
+	for(i=objects.begin(); i!=objects.end(); i++)
+	{
+		for(j=objects.begin(); j!=objects.end(); j++)
+		{
+			if((*i)->getName() == (*j)->getName())
+				continue;
+
+			const core::aabbox3d<f32> boundingBox1 = ((IrrGameObjectImpl*)(*j)->getImplementor())->node->getBoundingBox();
+			const core::aabbox3d<f32> boundingBox2 = ((IrrGameObjectImpl*)(*i)->getImplementor())->node->getBoundingBox();
+ 
+			if(boundingBox1.intersectsWithBox(boundingBox2))
+			{
+				//printf("%s e %s\n", (*i)->getName(), *(*j)->getName());
+				(*i)->onCollide((*j));
+				(*j)->onCollide((*i));
+			}
+		}
+	}		
+}
+
 /*
 void IrrCollisionManager::setSelectors()
 {

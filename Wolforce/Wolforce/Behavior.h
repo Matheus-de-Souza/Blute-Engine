@@ -50,8 +50,8 @@
 
 	Definição da classe de comportamentos
 */
-
 namespace WolfEngine{
+
 	//!Representa um comportamento genérico
     /*!
     Classe utilizada para definir diferentes tipos de comportamentos.
@@ -64,6 +64,7 @@ namespace WolfEngine{
 		desta classe base para criar o comportamento.
         */
 		virtual void update() = 0;
+		virtual void onCollide(GameObject * other){}
 		//!Define um game object ao comportamento
         /*!
         Associa um game object ao comportamento
@@ -83,7 +84,9 @@ namespace WolfEngine{
 			fsm = f;
 			acts = new list<Action *>();
 		}
-		void update()
+
+		virtual void onCollide(GameObject * other){}
+		virtual void update()
 		{
 			acts = fsm->update(acts);
 			list<Action *>::iterator i;

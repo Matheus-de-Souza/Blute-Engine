@@ -93,6 +93,7 @@ int IrrEngineStrategy::init()
 
 		//Pegar a GUI
 		guiEnv = device->getGUIEnvironment();
+		
 		//Setar uma clear color padrao
 		clearColor.set(0,0,255,255);
 
@@ -129,8 +130,8 @@ void IrrEngineStrategy::loop(Scene *scene, GUIEnvironment *ge, CollisionManager 
 			//Define o tempo passado com o atual
 			then = now;
 
-			//if(collMan!=NULL) collMan->
-
+			if(collMan!=NULL) collMan->checkCollisions(scene->getObjects());
+			
 			//Atualiza a cena			
 			if(scene!=NULL) scene->update();
 
@@ -269,4 +270,3 @@ InputReceiver *IrrlichtFactory::createInputReceiver()
 	}
 	return receiver;
 }
-

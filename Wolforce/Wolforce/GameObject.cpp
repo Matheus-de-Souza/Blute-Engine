@@ -155,6 +155,16 @@ void GameObject::update(){
 	}
 }
 
+
+void GameObject::onCollide(GameObject * other){
+	if(this->isActive()){
+		vector<Behavior*>::iterator i;
+		for(i=behaviors->begin(); i!=behaviors->end(); i++){
+			(*i)->onCollide(other);
+		}
+	}
+}
+
 void GameObject::addBehaviour(Behavior *b){
 	this->behaviors->push_back(b);
 	b->setGameObject(this);

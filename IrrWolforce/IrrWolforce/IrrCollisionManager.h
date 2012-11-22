@@ -27,7 +27,7 @@ namespace IrrWolforce
 		void setCollider(GameObject *level, bool opt=false);
 		void addResponse(GameObject *level, GameObject *target,  Vector radius, Vector offset);
 		void createLevel(GameObject *target);
-
+		void checkCollisions(std::vector<GameObject*> objects);
         /*void setSelectors();
         void setSelector(GameObject *);
         void addSelectorToGameObject(GameObject *);

@@ -157,6 +157,7 @@ namespace WolfEngine{
 		void setVisible(bool isVisible);
 		bool isVisible();
 
+		void onCollide(GameObject * other);
 		void update();
 		void addBehaviour(Behavior *);
 		Behavior *getBehavior();

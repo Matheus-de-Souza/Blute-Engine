@@ -55,10 +55,10 @@ void Scene::addObject(GameObject *o){
 void Scene::update(){
 	if(!paused) 
 	{
-	vector<GameObject*>::iterator i;	
+		vector<GameObject*>::iterator i;	
 		for(i=objects->begin(); i!=objects->end(); i++){
 			if( (*i)->getImplementor()->isActive())
-		(*i)->update();
+				(*i)->update();
 			else 
 			{
 				delete (*i);
