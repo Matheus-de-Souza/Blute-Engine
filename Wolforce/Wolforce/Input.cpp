@@ -101,3 +101,18 @@ float Input::getMouseWheel()
 {
 	return receiver->getMouseWheel();
 }
+
+int Input::GetMouseX()
+{
+	return receiver->GetMouseX();
+}
+
+int Input::GetMouseY()
+{
+	return receiver->GetMouseY();
+}
+
+int Input::GetMouseClick()
+{
+	return receiver->GetMouseClick();
+}

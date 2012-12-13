@@ -1,4 +1,4 @@
-#include <string>
+/*#include <string>
 #include <iostream>
 
 #include "WolfEngine.h"
@@ -8,34 +8,40 @@ using namespace WolfEngine;
 using namespace IrrWolforce;
 using namespace std;
 
-class MyBehavior: public Behavior{
+class MyBehavior: public Behavior
+{
 public:
-	
 	void onCollide(GameObject * other){}
-        void update(){
-                if(Input::getButton("fire1")){
-                        gameObject->translate(5.0,0.0,0.0);
-						gameObject->play();
-}
-                if(Input::getButton("fire2")){
-                        gameObject->translate(-5.0,0.0,0.0);
-						Engine::GetInstance()->setMousePosition(100,100);
-                }
+        void update()
+		{
+			if(Input::getButton("fire1")){
+				gameObject->translate(5.0,0.0,0.0);
+				gameObject->play();
+			}
+			if(Input::getButton("fire2")){
+				gameObject->translate(-5.0,0.0,0.0);
+				Engine::GetInstance()->setMousePosition(100,100);
+			}
         }
 private:
         float x;
 };
 
-class PlayerBehavior: public Behavior {
+class PlayerBehavior: public Behavior
+{
 public:
 	int colisoes;
 	PlayerBehavior()
 		:colisoes(0)
 	{}
-	void onCollide(GameObject * other){
+
+	void onCollide(GameObject * other)
+	{
 		printf("colisoes : %d\n", colisoes++);
 	}
-    void update(){
+
+    void update()
+	{
 		if(Input::getButton("fire1")){
 			//gameObject->getAnimation()->play("test");
 		}
@@ -58,7 +64,7 @@ class BackgroundBehaviour : public Behavior
 {
 private:
 	Vector position;
-	
+
 	void onCollide(GameObject * other){}
 	void update()
 	{
@@ -96,13 +102,22 @@ private:
 		rotation.x = rotation.x + rotIncrement.x;
 		rotation.y = rotation.y + rotIncrement.y;
 		rotation.z = rotation.z + rotIncrement.z;*/
+		/*
 
 		gameObject->setRotation(rotation);
 		gameObject->translate(posIncrement.x,posIncrement.y,posIncrement.z);
 	}
-	
+
 
 	void onCollide(GameObject * other){}
+};
+
+class EnemyBehaviour : public Behavior
+{
+public:
+	void update()
+	{
+	}
 };
 
 void main(){
@@ -118,14 +133,14 @@ void main(){
         Engine *engine = Engine::GetInstance();
 
 		engine->setWindowName(L"Test scene");
-		
+
 		Scene *scene = engine->createScene();
 
-		//GameObject * background = scene->addAnimatedMesh("../Scenes/OBJ/Background/Background.obj",new Vector(30,5,5));
+		//GameObject * background = scene->addAnimatedMesh("OBJ/Background/Background.obj",new Vector(30,5,5));
 		//background->setRotation(Vector(0,0,90));
 		//background->addBehaviour(new BackgroundBehaviour());
 
-		GameObject *player = scene->addAnimatedMesh("../Scenes/OBJ/Player/Player.obj",new Vector(15,5,5));
+		GameObject *player = scene->addAnimatedMesh("OBJ/Player/Player.obj",new Vector(15,5,5));
 
 		//amesh->getAnimation()->addAnimation(new AnimationEntry("test",0,50,10));
 	    player->addBehaviour(new PlayerBehavior());
@@ -144,7 +159,7 @@ void main(){
 
 		//for(int i = 0;i != 10; ++i)
 		//{
-		//	GameObject * obstacle = scene->addAnimatedMesh("../Scenes/OBJ/MeteoroM/Meteoro_M.obj",
+		//	GameObject * obstacle = scene->addAnimatedMesh("OBJ/MeteoroM/Meteoro_M.obj",
 		//													new Vector(-50, -100 + rand() % 200, - 500 + rand() % 1000));
 		//	obstacle->setName("obstaculo");
 		//	obstacle->addBehaviour(new ObstaclesBehaviour(Vector((rand() % 360) / 100.0f,(rand() % 360) / 100.0f,
@@ -156,3 +171,4 @@ void main(){
        delete scene;
        delete engine;
 }
+*/

@@ -104,6 +104,9 @@ namespace WolfEngine{
 		virtual void setVisible(bool isVisible)=0;
 		virtual bool isVisible()=0;
 
+		virtual void setCollidible(bool) = 0;
+		virtual bool isCollidible() = 0;
+
 		virtual bool collide(GameObject *) = 0;
 		
 		GameObject *gameObject;
@@ -154,8 +157,11 @@ namespace WolfEngine{
 		GameObjectImpl *getImplementor() {return imp;}
 		void setActive(bool a);	
 		bool isActive();
-		void setVisible(bool isVisible);
+		void setVisible(bool);
 		bool isVisible();
+		
+		void setCollidible(bool);
+		bool isCollidible();
 
 		void onCollide(GameObject * other);
 		void update();

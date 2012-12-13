@@ -55,16 +55,22 @@ void Scene::addObject(GameObject *o){
 void Scene::update(){
 	if(!paused) 
 	{
-		vector<GameObject*>::iterator i;	
-		for(i=objects->begin(); i!=objects->end(); i++){
-			if( (*i)->getImplementor()->isActive())
-				(*i)->update();
-			else 
-			{
-				delete (*i);
-				(*i) = NULL;
-				objects->erase(i);
-			}
+		//vector<GameObject*>::iterator i;	
+		//for(i=objects->begin(); i!=objects->end(); i++){
+		GameObject * i;
+		int nObjects = objects->size();
+		for(int a = 0; a != nObjects; ++a)
+		{
+			i = (*objects)[a];
+
+			if( i->getImplementor()->isActive())
+				i->update();
+			//else 
+			//{
+			//	delete i;
+			//	i = NULL;
+			//	//objects->erase(i);
+			//}
 		}
 	}
 }

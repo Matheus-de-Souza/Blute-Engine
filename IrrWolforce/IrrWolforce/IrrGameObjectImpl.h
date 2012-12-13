@@ -101,6 +101,9 @@ namespace IrrWolforce{
 		void setVisible(bool isVisible);
 		bool isVisible();
 
+		void setCollidible(bool isCollidible);
+		bool isCollidible();
+
 		void play();
 
 		bool collide(GameObject *o);
@@ -109,6 +112,7 @@ namespace IrrWolforce{
 		GameObject *gameObject;
 	private:
 		bool active;
+		bool collidible;
 
 		Camera *camera;
 		Component *mesh;

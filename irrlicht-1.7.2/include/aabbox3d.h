@@ -233,7 +233,7 @@ class aabbox3d
 		bool intersectsWithBox(const aabbox3d<T>& other) const
 		{
 			return (MinEdge.X <= other.MaxEdge.X && MinEdge.Y <= other.MaxEdge.Y && MinEdge.Z <= other.MaxEdge.Z &&
-				MaxEdge.X >= other.MinEdge.X && MaxEdge.Y >= other.MinEdge.Y && MaxEdge.Z >= other.MinEdge.Z);
+				    MaxEdge.X >= other.MinEdge.X && MaxEdge.Y >= other.MinEdge.Y && MaxEdge.Z >= other.MinEdge.Z);
 		}
 
 		//! Tests if the box intersects with a line

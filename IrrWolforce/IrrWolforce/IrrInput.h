@@ -57,9 +57,31 @@ namespace IrrWolforce
 			bool isKeyDown(int keyCode);
 			void clear();
 			float getMouseWheel();
+			
+			// Get Mouse position in X
+			int GetMouseX()
+			{
+				return mouse_x;
+			}
+			inline int GetMouseY()
+			{
+				return mouse_y;
+			}
+			int GetMouseClick()
+			{
+				if(rPressed)
+					return 1;
+				if(lPressed)
+					return 2;
+			}
 		private:
 			//Armazena o estado das teclas pressionadas
 			bool KeyIsDown[KEY_KEY_CODES_COUNT];
 			float mouseWheel;
+
+			// stores mouse position
+			int mouse_x, mouse_y;
+			bool rPressed, lPressed;
+			bool rWasPressed, lWasPressed;
 	};
 }

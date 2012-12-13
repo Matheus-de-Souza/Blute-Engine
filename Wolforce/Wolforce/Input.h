@@ -52,6 +52,10 @@ namespace WolfEngine{
 		virtual bool isKeyDown(int keyCode) = 0;
 		virtual void clear() = 0;
 		virtual float getMouseWheel() = 0;
+		
+		virtual int GetMouseX() = 0;
+		virtual int GetMouseY() = 0;
+		virtual int GetMouseClick() = 0;
 	};
 
 	class WOLFORCE_API Input{
@@ -69,6 +73,13 @@ namespace WolfEngine{
 		static bool getButtonDown(char *);
 
 		static float getMouseWheel();
+		
+		// Get X position of the mouse
+		static int GetMouseX();
+		// Get Y position of the mouse
+		static int GetMouseY();
+
+		static int GetMouseClick();
 	};
 }
 #endif

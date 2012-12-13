@@ -64,10 +64,10 @@ namespace IrrWolforce{
 	public:
 		//IrrScene(ISceneManager *,ISoundEngine *);
 		IrrScene(ISceneManager *,ISoundEngine *, IVideoDriver *);
-		GameObject *addCube(Vector*);
-		GameObject *addSphere(Vector*);
-		GameObject *addAnimatedMesh(char *,Vector*);
-		GameObject *addMesh(char *,Vector*);
+		GameObject *addCube(Vector*, bool = true);
+		GameObject *addSphere(Vector*, bool = true);
+		GameObject *addAnimatedMesh(char *,Vector*, bool = true);
+		GameObject *addMesh(char *,Vector*, bool = true);
 		GameObject *addCamera(Vector*,Vector*);
 		GameObject *addAudio(const char *,int,Vector*);
 		GameObject *addParticles(char *imageFileName);

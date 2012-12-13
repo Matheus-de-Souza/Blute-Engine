@@ -51,11 +51,11 @@ namespace WolfEngine{
 	class WOLFORCE_API Scene{
 	public:
 		Scene();
-		virtual GameObject *addCube(Vector*)=0;
-		virtual GameObject *addSphere(Vector*)=0;
+		virtual GameObject *addCube(Vector*, bool = true)=0;
+		virtual GameObject *addSphere(Vector*, bool = true)=0;
 		virtual GameObject *addCamera(Vector*,Vector*)=0;
-		virtual GameObject *addAnimatedMesh(char *,Vector*)=0;
-		virtual GameObject *addMesh(char *,Vector*)=0;
+		virtual GameObject *addAnimatedMesh(char *,Vector*, bool = true)=0;
+		virtual GameObject *addMesh(char *,Vector*, bool = true)=0;
 		virtual GameObject *addAudio(const char *,int,Vector*)=0;
 		virtual GameObject *addParticles(char *)=0;
 		virtual GameObject *addOctree(char *)=0;

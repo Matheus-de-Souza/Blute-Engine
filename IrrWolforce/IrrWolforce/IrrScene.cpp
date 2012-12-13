@@ -15,7 +15,7 @@
 
     You should have received a copy of the GNU Lesser General Public
     License along with this library; if not, write to the Free Software
-    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111--idCounter307  USA
 
     For the purposes of the WolfForce Engine Project software we request that 
 	software using or linking this engine or its libraries display the
@@ -50,6 +50,7 @@
 using namespace IrrWolforce;
 using namespace core;
  
+static int idCounter = INT_MAX;
 
 IrrScene::IrrScene(ISceneManager *s, ISoundEngine *ss, IVideoDriver *v): Scene()
 {
@@ -59,20 +60,24 @@ IrrScene::IrrScene(ISceneManager *s, ISoundEngine *ss, IVideoDriver *v): Scene()
 	this->selector = NULL;
 }
 
-GameObject *IrrScene::addCube(Vector* p)
+GameObject *IrrScene::addCube(Vector* p, bool isCollidible)
 {
 	GameObject *go = new GameObject();
 	((IrrGameObjectImpl*)go->getImplementor())->node = smgr->addEmptySceneNode();
-	go->setMesh(new IrrMesh(smgr->addCubeSceneNode(10.0f,((IrrGameObjectImpl*)go->getImplementor())->node,-1,vector3df(p->x,p->y,p->z))));
-	this->addObject(go);	
+	go->setMesh(new IrrMesh(smgr->addCubeSceneNode(10.0f,((IrrGameObjectImpl*)go->getImplementor())->node,--idCounter,vector3df(p->x,p->y,p->z))));
+	go->setID(idCounter);
+	go->setCollidible(isCollidible);
+	this->addObject(go);
 	return go;
 }
 
-GameObject *IrrScene::addSphere(Vector* p)
+GameObject *IrrScene::addSphere(Vector* p, bool isCollidible)
 {
 	GameObject *go = new GameObject;
 	((IrrGameObjectImpl*)go->getImplementor())->node = smgr->addEmptySceneNode();
-	go->setMesh(new IrrMesh(smgr->addSphereSceneNode(10.0f,16,((IrrGameObjectImpl*)go->getImplementor())->node,-1,vector3df(p->x,p->y,p->z))));
+	go->setMesh(new IrrMesh(smgr->addSphereSceneNode(10.0f,16,((IrrGameObjectImpl*)go->getImplementor())->node,--idCounter,vector3df(p->x,p->y,p->z))));
+	go->setID(idCounter);
+	go->setCollidible(isCollidible);
 	this->addObject(go);	
 	return go;
 }
@@ -82,27 +87,33 @@ GameObject *IrrScene::addCamera(Vector* p, Vector* lookAt)
 	GameObject *go = new GameObject;
 	((IrrGameObjectImpl*)go->getImplementor())->node = smgr->addEmptySceneNode();
 	go->setCamera(new IrrCamera(smgr->addCameraSceneNode(((IrrGameObjectImpl*)go->getImplementor())->node, vector3df(p->x,p->y,p->z), vector3df(lookAt->x,lookAt->y,lookAt->z))));
+	go->setID(idCounter);
+	go->setCollidible(false);
 	this->addObject(go);	
 	return go;
 }
 
-GameObject *IrrScene::addAnimatedMesh(char *am, Vector* p)
+GameObject *IrrScene::addAnimatedMesh(char *am, Vector* p, bool isCollidible)
 {
 	GameObject *go = new GameObject;
 	((IrrGameObjectImpl*)go->getImplementor())->node = smgr->addEmptySceneNode();
 	go->setAnimation(new IrrAnimatedMesh(smgr->addAnimatedMeshSceneNode(smgr->getMesh(am),
 										 ((IrrGameObjectImpl*)go->getImplementor())->node,
-										 -1,
+										 --idCounter,
 										 vector3df(p->x,p->y,p->z))));
+	go->setID(idCounter);
+	go->setCollidible(isCollidible);
 	this->addObject(go);	
 	return go;
 }
 
-GameObject *IrrScene::addMesh(char *m, Vector* p)
+GameObject *IrrScene::addMesh(char *m, Vector* p, bool isCollidible)
 {
 	GameObject *go = new GameObject;
 	((IrrGameObjectImpl*)go->getImplementor())->node = smgr->addEmptySceneNode();
-	go->setMesh(new IrrMesh(smgr->addMeshSceneNode(smgr->getMesh(m),((IrrGameObjectImpl*)go->getImplementor())->node,-1,vector3df(p->x,p->y,p->z))));
+	go->setMesh(new IrrMesh(smgr->addMeshSceneNode(smgr->getMesh(m),((IrrGameObjectImpl*)go->getImplementor())->node,--idCounter,vector3df(p->x,p->y,p->z))));
+	go->setID(idCounter);
+	go->setCollidible(isCollidible);
 	this->addObject(go);	
 	return go;
 }
@@ -167,7 +178,7 @@ int IrrScene::getNodeCount(char *name)
 		}
 	}
 	//retorna quantidade de nodos com aquele nome
-	return count-1;
+	return count - 1;
 	
 }
 
@@ -186,8 +197,6 @@ Vector *IrrScene::getNodePosition(char *name)
 		//smgr->getSceneNodeFromName(str.c_str())->remove();
 		smgr->getSceneNodeFromName(str.c_str())->setMaterialFlag(video::EMF_LIGHTING, false);
 		smgr->getSceneNodeFromName(str.c_str())->setMaterialFlag(video::EMF_FOG_ENABLE,true);
-		
-
 	}
 	return vec;
 }

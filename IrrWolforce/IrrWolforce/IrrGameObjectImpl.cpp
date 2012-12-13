@@ -204,6 +204,16 @@ bool IrrGameObjectImpl::isVisible()
 	return this->node->isVisible();
 }
 
+void IrrGameObjectImpl::setCollidible(bool collidible)
+{
+	this->collidible = collidible;
+}
+
+bool IrrGameObjectImpl::isCollidible()
+{
+	return this->collidible;
+}
+
 bool IrrGameObjectImpl::collide(GameObject *o)
 {
 	aabbox3d<f32> nodeTarget;

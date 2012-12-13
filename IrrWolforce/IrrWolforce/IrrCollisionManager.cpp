@@ -62,30 +62,63 @@ void IrrCollisionManager::addResponse(GameObject *level, GameObject *target,  Ve
 
 void IrrCollisionManager::createLevel(GameObject *target){
 	IAnimatedMeshSceneNode *scene = ((IrrAnimatedMesh*)target->getAnimation())->node;
-	smgr->addOctreeSceneNode( scene->getMesh());			
+	smgr->addOctreeSceneNode(scene->getMesh());			
 	this->setCollider(target,true);
 }
 
-void IrrCollisionManager::checkCollisions(std::vector<GameObject*> objects)
+void IrrCollisionManager::checkCollisions(std::vector<GameObject*> & objects)
 {
-	vector<GameObject*>::iterator i;
-	vector<GameObject*>::iterator j;
+	//vector<GameObject*>::iterator i;
+	//vector<GameObject*>::iterator j;
+	
+	core::aabbox3d<f32> boundingBox1;
+	core::aabbox3d<f32> boundingBox2;
+	
+	bool collided = false;
 
-	for(i=objects.begin(); i!=objects.end(); i++)
+	GameObject * i;
+	GameObject * j;
+
+	//for(i=objects->begin(); i!=objects->end(); i++)
+	//{
+	//	for(j=objects->begin(); j!=objects->end(); j++)
+	//	{
+	int nObjects = objects.size();
+	for(int a = 0; a != nObjects; ++a)
 	{
-		for(j=objects.begin(); j!=objects.end(); j++)
-		{
-			if((*i)->getName() == (*j)->getName())
-				continue;
+		for(int b = 0; b != nObjects; ++b)
+		{			
+			i = objects[a];
+			j = objects[b];
 
-			const core::aabbox3d<f32> boundingBox1 = ((IrrGameObjectImpl*)(*j)->getImplementor())->node->getBoundingBox();
-			const core::aabbox3d<f32> boundingBox2 = ((IrrGameObjectImpl*)(*i)->getImplementor())->node->getBoundingBox();
- 
-			if(boundingBox1.intersectsWithBox(boundingBox2))
+						if(i->getID() == j->getID() || !i->isCollidible() || !j->isCollidible())
 			{
-				//printf("%s e %s\n", (*i)->getName(), *(*j)->getName());
-				(*i)->onCollide((*j));
-				(*j)->onCollide((*i));
+				//printf("%s - %s\n", i->getName() , j->getName());
+				continue;
+			}
+
+			if(i->getMesh()!=NULL){
+				boundingBox1 =((IrrMesh *)i->getMesh())->node->getTransformedBoundingBox();
+			}
+			else if(i->getAnimation()!=NULL){
+				boundingBox1 =((IrrAnimatedMesh *)i->getAnimation())->node->getTransformedBoundingBox();
+			}
+
+			if(j->getMesh()!=NULL){
+				boundingBox2 =((IrrMesh *)j->getMesh())->node->getTransformedBoundingBox();
+			}
+			else if(j->getAnimation()!=NULL){
+				boundingBox2 =((IrrAnimatedMesh *)j->getAnimation())->node->getTransformedBoundingBox();
+			}
+
+			if(!boundingBox1.isEmpty() && !boundingBox2.isEmpty()){
+				collided = boundingBox1.intersectsWithBox(boundingBox2);	
+			}
+			
+			if(collided){
+				//printf("%s e %s\n", i->getName(), *j->getName());
+				i->onCollide(j);
+				j->onCollide(i);
 			}
 		}
 	}		

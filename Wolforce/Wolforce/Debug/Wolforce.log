@@ -1,21 +1,16 @@
-﻿Build started 07/11/2012 23:57:51.
-     1>Project "C:\Users\ACER\Documents\GitHub\test\g0_2012\Wolforce\Wolforce\Wolforce.vcxproj" on node 4 (build target(s)).
+﻿Build started 13/12/2012 11:21:50.
+     1>Project "C:\Users\ACER\Documents\GitHub\Blute-Engine-bkp\Wolforce\Wolforce\Wolforce.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\Wolforce.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
          All outputs are up-to-date.
-         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _USRDLL /D WOLFORCE_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Engine.cpp GameObject.cpp Scene.cpp SpatialManager.cpp
-         Engine.cpp
-         Generating Code...
-         Skipping... (no relevant changes detected)
-         SpatialManager.cpp
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _USRDLL /D WOLFORCE_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Scene.cpp
          Scene.cpp
-         GameObject.cpp
          All outputs are up-to-date.
        ManifestResourceCompile:
          All outputs are up-to-date.
        Link:
-         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\..\bin\Debug\Wolforce.dll" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\Wolforce.dll.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\ACER\Documents\GitHub\test\g0_2012\bin\Debug\Wolforce.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"..\..\lib\Debug\Wolforce.lib" /MACHINE:X86 /DLL Debug\Wolforce.dll.embed.manifest.res
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\..\bin\Debug\Wolforce.dll" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\Wolforce.dll.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\ACER\Documents\GitHub\Blute-Engine-bkp\bin\Debug\Wolforce.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"..\..\lib\Debug\Wolforce.lib" /MACHINE:X86 /DLL Debug\Wolforce.dll.embed.manifest.res
          Debug\Animation.obj
          Debug\Component.obj
          Debug\dllmain.obj
@@ -32,12 +27,12 @@
          All outputs are up-to-date.
        LinkEmbedManifest:
          All outputs are up-to-date.
-         Wolforce.vcxproj -> C:\Users\ACER\Documents\GitHub\test\g0_2012\Wolforce\Wolforce\..\..\bin\Debug\Wolforce.dll
+         Wolforce.vcxproj -> C:\Users\ACER\Documents\GitHub\Blute-Engine-bkp\Wolforce\Wolforce\..\..\bin\Debug\Wolforce.dll
        FinalizeBuildStatus:
          Deleting file "Debug\Wolforce.unsuccessfulbuild".
          Touching "Debug\Wolforce.lastbuildstate".
-     1>Done Building Project "C:\Users\ACER\Documents\GitHub\test\g0_2012\Wolforce\Wolforce\Wolforce.vcxproj" (build target(s)).
+     1>Done Building Project "C:\Users\ACER\Documents\GitHub\Blute-Engine-bkp\Wolforce\Wolforce\Wolforce.vcxproj" (build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:06.31
+Time Elapsed 00:00:01.24

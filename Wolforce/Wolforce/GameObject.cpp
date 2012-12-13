@@ -228,9 +228,25 @@ bool GameObject::isActive() {
 	return this->imp->isActive();
 }
 
+void GameObject::setVisible(bool visible) {
+	this->imp->setVisible(visible);
+}	
+
+bool GameObject::isVisible() {
+	return this->imp->isVisible();
+}
+
+void GameObject::setCollidible(bool collidible) {
+	this->imp->setCollidible(collidible);
+}	
+
+bool GameObject::isCollidible() {
+	return this->imp->isCollidible();
+}
+
 void GameObject::play()
 {
-	this->imp->play();	
+	this->imp->play();
 }
 
 bool GameObject::collide(GameObject *target)
@@ -256,14 +272,4 @@ void GameObject::setMaterialFlag(EWolfMaterialFlag flag, bool active)
 void GameObject::remove()
 {
 	this->imp->remove();
-}
-
-void  GameObject::setVisible(bool isVisible)
-{
-	this->imp->setVisible(isVisible);
-}
-
-bool  GameObject::isVisible()
-{
-	return this->imp->isVisible();
 }
