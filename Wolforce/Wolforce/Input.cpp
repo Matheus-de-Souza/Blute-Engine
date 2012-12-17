@@ -61,7 +61,7 @@ bool Input::getButton(char *c)
 	else{
 		multimap<string, int>::iterator lastElement = keys->upper_bound(t);
 		for(; i != lastElement; ++i){
-			if(receiver->isKeyDown(i->second)){
+			if(receiver->isKey(i->second)){
 				return true;
 			}
 		}	
@@ -80,6 +80,24 @@ bool Input::getButtonDown(char *c)
 		multimap<string, int>::iterator lastElement = keys->upper_bound(t);
 		for(; i != lastElement; ++i){
 			if(receiver->isKeyDown(i->second)){
+				return true;
+			}
+		}	
+	}
+	return false;
+}
+
+bool Input::getButtonUp(char *c)
+{
+	string t(c);
+	multimap<string, int>::iterator i =	keys->find(t);
+	if(i==keys->end()){
+		return false;
+	}
+	else{
+		multimap<string, int>::iterator lastElement = keys->upper_bound(t);
+		for(; i != lastElement; ++i){
+			if(receiver->isKeyUp(i->second)){
 				return true;
 			}
 		}	

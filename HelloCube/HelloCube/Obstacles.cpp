@@ -6,7 +6,7 @@ Obstacles::Obstacles(Vector &pos, Scene *scene)
 	//Obstacle = scene->addMesh("Scenes/Scenes/gera_cadeira.obj",Vector(pos.x+300, pos.y-400, pos.z));
 	//Obstacle = scene->addCube(new Vector(pos.x+300, pos.y+20, pos.z));
 	//Obstacle->setScale(Vector(2,2,2));
-	Obstacle = scene->addAnimatedMesh("OBJ/MeteoroM/Meteoro_M.obj",
+	Obstacle = scene->addAnimatedMesh("../Scenes/OBJ/MeteoroM/Meteoro_M.obj",
 												new Vector(-100, -100 + rand() % 200, - 500 + rand() % 1000));
 	Obstacle->setName("obstaculo");
 	obstacle_behaviour = new ObstacleBehaviour(Vector((rand() % 360) / 100.0f,(rand() % 360) / 100.0f,

@@ -8,8 +8,10 @@ int main()
 {
 	HWND hWnd = GetConsoleWindow();
 	ShowWindow( hWnd, SW_HIDE );
+	
+	ShowCursor(FALSE);
 
-	Mundo::Iniciar();
+	Mundo::MenuPrincipal();
 
 	return 0;
 }

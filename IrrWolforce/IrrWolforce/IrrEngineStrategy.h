@@ -89,7 +89,7 @@ namespace IrrWolforce{
 		void setClearColor(unsigned int a, unsigned int r, unsigned int g, unsigned int b);
 		void setFog(float start, float end, float density, bool perPixel);
 		void setWindowName(wchar_t *name);
-
+		void closeApplication();
 	};
 
 	class IRRWOLFORCE_API IrrlichtFactory: public EngineFactory{

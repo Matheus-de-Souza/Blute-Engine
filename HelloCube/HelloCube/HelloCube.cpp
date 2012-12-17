@@ -136,11 +136,11 @@ void main(){
 
 		Scene *scene = engine->createScene();
 
-		//GameObject * background = scene->addAnimatedMesh("OBJ/Background/Background.obj",new Vector(30,5,5));
+		//GameObject * background = scene->addAnimatedMesh("../Scenes/OBJ/Background/Background.obj",new Vector(30,5,5));
 		//background->setRotation(Vector(0,0,90));
 		//background->addBehaviour(new BackgroundBehaviour());
 
-		GameObject *player = scene->addAnimatedMesh("OBJ/Player/Player.obj",new Vector(15,5,5));
+		GameObject *player = scene->addAnimatedMesh("../Scenes/OBJ/Player/Player.obj",new Vector(15,5,5));
 
 		//amesh->getAnimation()->addAnimation(new AnimationEntry("test",0,50,10));
 	    player->addBehaviour(new PlayerBehavior());
@@ -159,7 +159,7 @@ void main(){
 
 		//for(int i = 0;i != 10; ++i)
 		//{
-		//	GameObject * obstacle = scene->addAnimatedMesh("OBJ/MeteoroM/Meteoro_M.obj",
+		//	GameObject * obstacle = scene->addAnimatedMesh("../Scenes/OBJ/MeteoroM/Meteoro_M.obj",
 		//													new Vector(-50, -100 + rand() % 200, - 500 + rand() % 1000));
 		//	obstacle->setName("obstaculo");
 		//	obstacle->addBehaviour(new ObstaclesBehaviour(Vector((rand() % 360) / 100.0f,(rand() % 360) / 100.0f,

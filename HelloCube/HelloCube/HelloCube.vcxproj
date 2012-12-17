@@ -96,6 +96,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cenario.h" />
+    <ClInclude Include="GUIBehaviour.h" />
     <ClInclude Include="Includes.h" />
     <ClInclude Include="Inimigos.h" />
     <ClInclude Include="Jogador.h" />

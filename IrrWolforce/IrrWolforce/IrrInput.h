@@ -55,6 +55,9 @@ namespace IrrWolforce
 			IrrInput();
 			virtual bool OnEvent(const SEvent& event);
 			bool isKeyDown(int keyCode);
+			bool isKeyUp(int keyCode);
+			bool isKey(int keyCode);
+
 			void clear();
 			float getMouseWheel();
 			
@@ -76,7 +79,11 @@ namespace IrrWolforce
 			}
 		private:
 			//Armazena o estado das teclas pressionadas
-			bool KeyIsDown[KEY_KEY_CODES_COUNT];
+			bool Key[KEY_KEY_CODES_COUNT];
+			bool KeyDown[KEY_KEY_CODES_COUNT];
+			bool KeyUp[KEY_KEY_CODES_COUNT];
+			bool keyLastState[KEY_KEY_CODES_COUNT];
+
 			float mouseWheel;
 
 			// stores mouse position

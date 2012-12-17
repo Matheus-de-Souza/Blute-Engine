@@ -45,39 +45,59 @@ using namespace IrrWolforce;
 
 IrrInput::IrrInput()
 {
-	for (u32 i=0; i<KEY_KEY_CODES_COUNT; ++i)
-		KeyIsDown[i] = false;
+	clear();
 	mouseWheel = 0;
-
 }
 
 bool IrrInput::OnEvent(const SEvent& event)
 {
+	lPressed = rPressed = 0;
 	if (event.EventType == irr::EET_KEY_INPUT_EVENT){
 		//Marca da tecla (obtida no evento) como pressionada
-		KeyIsDown[event.KeyInput.Key] = event.KeyInput.PressedDown;
+		keyLastState[event.KeyInput.Key] = Key[event.KeyInput.Key];
+		Key[event.KeyInput.Key]			 = event.KeyInput.PressedDown;
+
+		if(Key[event.KeyInput.Key] != keyLastState[event.KeyInput.Key])
+		{
+			if(Key[event.KeyInput.Key] == true)
+			{
+				KeyDown[event.KeyInput.Key] = true;
+			}
+			else
+			{
+				KeyUp[event.KeyInput.Key] = true;
+			}
+		}
 	}
 	if (event.EventType == irr::EET_MOUSE_INPUT_EVENT) {	
 		 switch(event.MouseInput.Event) 
 		 {
             case EMIE_LMOUSE_PRESSED_DOWN:
-                    KeyIsDown[KEY_LBUTTON] = true;
+                    Key[KEY_LBUTTON] = true;
+					lPressed = event.MouseInput.ButtonStates;
                     break;
 
             case EMIE_LMOUSE_LEFT_UP:
-                    KeyIsDown[KEY_LBUTTON] = false;
+                    Key[KEY_LBUTTON] = false;
                     break;
 			case EMIE_RMOUSE_PRESSED_DOWN:
-				KeyIsDown[KEY_RBUTTON] = true;
+				rPressed = event.MouseInput.ButtonStates;
+				Key[KEY_RBUTTON] = true;
                     break;
 
 			case EMIE_RMOUSE_LEFT_UP:
-                    KeyIsDown[KEY_RBUTTON] = false;
+                    Key[KEY_RBUTTON] = false;
                     break;
 
 			case EMIE_MOUSE_WHEEL:
 				mouseWheel = event.MouseInput.Wheel;
-				break;			
+				break;		
+
+			case EMIE_MOUSE_MOVED:
+                mouse_x = event.MouseInput.X - 650;
+                mouse_y = event.MouseInput.Y - 300;
+                break;
+
 
 			default : break;
 		 }
@@ -87,14 +107,31 @@ bool IrrInput::OnEvent(const SEvent& event)
 
 bool IrrInput::isKeyDown(int keyCode)
 {
-	return KeyIsDown[keyCode];
+	bool b = KeyDown[keyCode];
+	KeyDown[keyCode] = false;
+	return b;
 }
 
+bool IrrInput::isKeyUp(int keyCode)
+{
+	bool b = KeyUp[keyCode];
+	KeyUp[keyCode] = false;
+	return b;
+}
+
+bool IrrInput::isKey(int keyCode)
+{
+	return Key[keyCode];
+}
 
 void IrrInput::clear()
 {
-	for (u32 i=0; i<KEY_KEY_CODES_COUNT; ++i)
-		KeyIsDown[i] = false;
+	for (u32 i=0; i != KEY_KEY_CODES_COUNT; ++i)
+	{
+		Key[i] = false;
+		KeyDown[i] = false;
+		KeyUp[i] = false;
+	}
 }
 
 float IrrInput::getMouseWheel()

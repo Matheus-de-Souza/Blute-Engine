@@ -78,7 +78,7 @@ int IrrEngineStrategy::init()
 		//usa stencil buffer?
 		//se utiliza vsync
 		//o endere�o objeto para receber os eventos. No caso o default � 0
-		device = createDevice( video::EDT_DIRECT3D9, dimension2d<u32>(640, 480), 16, false, false, false, (IrrInput*)inputsReceiver);
+		device = createDevice( video::EDT_DIRECT3D9, dimension2d<u32>(1024, 768), 16, false, false, false, (IrrInput*)inputsReceiver);
 		//Se nao conseguiu retornar encerra a aplica��o
         if (!device) return 1;
 
@@ -247,6 +247,9 @@ void IrrEngineStrategy::addFileArchive(char *c){
 	device->getFileSystem()->addFileArchive(c);
 }
 
+void IrrEngineStrategy::closeApplication(){
+	device->closeDevice();
+}
 //FACTORY
 IrrlichtFactory::IrrlichtFactory()
 {

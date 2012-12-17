@@ -190,3 +190,8 @@ CollisionManager *Engine::getCollisionManager()
 void Engine::addFileArchive(char *c){
 	Engine::strategy->addFileArchive(c);
 }
+
+void Engine::closeApplication()
+{
+	Engine::strategy->closeApplication();
+}

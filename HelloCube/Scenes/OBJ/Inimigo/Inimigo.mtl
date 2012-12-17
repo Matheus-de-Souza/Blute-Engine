@@ -1,0 +1,114 @@
+# 3ds Max Wavefront OBJ Exporter v0.97b - (c)2007 guruware
+# File Created: 17.12.2012 14:57:48
+
+newmtl cinza
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5882 0.5882 0.5882
+	Kd 0.5882 0.5882 0.5882
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\Sargento\Desktop\Blute_Hole\Texturas\Metal\metal_texture_1_by_wojtar_stock.jpg
+	map_Kd C:\Users\Sargento\Desktop\Blute_Hole\Texturas\Metal\metal_texture_1_by_wojtar_stock.jpg
+
+newmtl ferrugem
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5882 0.5882 0.5882
+	Kd 0.5882 0.5882 0.5882
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\Sargento\Desktop\Blute_Hole\Texturas\rusted1.jpg
+	map_Kd C:\Users\Sargento\Desktop\Blute_Hole\Texturas\rusted1.jpg
+
+newmtl furado
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5882 0.5882 0.5882
+	Kd 0.5882 0.5882 0.5882
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\Sargento\Desktop\Blute_Hole\Texturas\metal23.jpg
+	map_Kd C:\Users\Sargento\Desktop\Blute_Hole\Texturas\metal23.jpg
+
+newmtl larva
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5882 0.5882 0.5882
+	Kd 0.5882 0.5882 0.5882
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\Sargento\Desktop\Blute_Hole\Texturas\volcanic\7.jpg
+	map_Kd C:\Users\Sargento\Desktop\Blute_Hole\Texturas\volcanic\7.jpg
+
+newmtl fogo
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5882 0.5882 0.5882
+	Kd 0.5882 0.5882 0.5882
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\Sargento\Desktop\Blute_Hole\Texturas\volcanic\2.jpg
+	map_Kd C:\Users\Sargento\Desktop\Blute_Hole\Texturas\volcanic\2.jpg
+
+newmtl larva2
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5882 0.5882 0.5882
+	Kd 0.5882 0.5882 0.5882
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\Sargento\Desktop\Blute_Hole\Texturas\volcanic\8.jpg
+	map_Kd C:\Users\Sargento\Desktop\Blute_Hole\Texturas\volcanic\8.jpg
+
+newmtl lata
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5882 0.5882 0.5882
+	Kd 0.5882 0.5882 0.5882
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\Sargento\Desktop\Blute_Hole\Texturas\Metal\cool_metal_texture_by_skipgo.jpg
+	map_Kd C:\Users\Sargento\Desktop\Blute_Hole\Texturas\Metal\cool_metal_texture_by_skipgo.jpg
+
+newmtl cinza2
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5882 0.5882 0.5882
+	Kd 0.5882 0.5882 0.5882
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\Sargento\Desktop\Blute_Hole\Texturas\04_metal-textures_by_freegrunge_com.jpg
+	map_Kd C:\Users\Sargento\Desktop\Blute_Hole\Texturas\04_metal-textures_by_freegrunge_com.jpg

@@ -18,9 +18,9 @@ class Jogador
 public:
 	Jogador(Vector &pos, Scene * scene);
 	~Jogador(void) { }
+	GameObject * player_o;
 
 private:
-	GameObject * player_o;
 	Scene * scene;
 	GameObject* camera;
 	PlayerBehaviour* player_behaviour; 

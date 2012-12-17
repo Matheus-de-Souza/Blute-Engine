@@ -50,6 +50,9 @@ namespace WolfEngine{
 	class WOLFORCE_API InputReceiver{
 	public:
 		virtual bool isKeyDown(int keyCode) = 0;
+		virtual bool isKeyUp(int keyCode) = 0;
+		virtual bool isKey(int keyCode) = 0;
+
 		virtual void clear() = 0;
 		virtual float getMouseWheel() = 0;
 		
@@ -71,6 +74,7 @@ namespace WolfEngine{
 
 		static bool getButton(char *);
 		static bool getButtonDown(char *);
+		static bool getButtonUp(char *);
 
 		static float getMouseWheel();
 		

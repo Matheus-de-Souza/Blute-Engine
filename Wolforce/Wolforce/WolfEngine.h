@@ -78,6 +78,7 @@ namespace WolfEngine{
 		virtual void setWindowName(wchar_t *name) = 0;
 		virtual void setFog(float start, float end, float density, bool perPixel)=0;
 		virtual void setClearColor(unsigned int a, unsigned int r, unsigned int g, unsigned int b) = 0;
+		virtual void closeApplication() = 0;
 
 	};
 
@@ -120,6 +121,7 @@ namespace WolfEngine{
 		void setClearColor(unsigned int a, unsigned int r, unsigned int g, unsigned int b);
 		void setFog(float start, float end, float density, bool perPixel);
 		void setWindowName(wchar_t *name);
+		void closeApplication();
 	};
 
 	class WOLFORCE_API EngineFactory{

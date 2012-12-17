@@ -4,17 +4,14 @@ PortalBranco::PortalBranco(Vector &pos, Scene *scene)
 {
 	this->scene = scene;
 	
-	portalbranconucleo_behaviour = new PortalBrancoBehaviour_Nucleo;
-	portalbranco_nucleo = scene->addSphere(new Vector(5.5,5.5,5.5));
-	portalbranco_nucleo->setName("Portal Branco Nucleo");
-	portalbranco_nucleo->setPosition(pos);
-	portalbranco_nucleo->addBehaviour(portalbranconucleo_behaviour);
 
-	portalbrancoexterior_behaviour = new PortalBrancoBehaviour_Exterior;
-	portalbranco_exterior = scene->addSphere(new Vector(10.0,10.0,10.0));
-	portalbranco_exterior->setName("Portal Branco Exterior");
-	portalbranco_exterior->setPosition(pos);
-	portalbranco_exterior->addBehaviour(portalbrancoexterior_behaviour);
+	portalbranco_behaviour = new PortalBrancoBehaviour;
+	portalbranco_o = scene->addSphere(new Vector(5.5,5.5,-55.5));
+	portalbranco_o->setPosition(pos);
+	portalbranco_o->addBehaviour(portalbranco_behaviour);
+
+	
+
 }
 
 PortalBranco::~PortalBranco(void)
@@ -22,44 +19,32 @@ PortalBranco::~PortalBranco(void)
 
 }
 
-PortalBrancoBehaviour_Nucleo::PortalBrancoBehaviour_Nucleo()
+PortalBrancoBehaviour::PortalBrancoBehaviour()
 {
 
 }
 
-void PortalBrancoBehaviour_Nucleo::update()
-{
-
-
-
-}
-
-PortalBrancoBehaviour_Exterior::PortalBrancoBehaviour_Exterior()
-{
-
-}
-
-void PortalBrancoBehaviour_Exterior::update()
+void PortalBrancoBehaviour::update()
 {
 
 
 
 }
+
 
 
 PortalPreto::PortalPreto(Vector &pos, Scene *scene)
 {
 	this->scene = scene;
+	
 
-	portalpretonucleo_behaviour = new PortalPretoBehaviour_Nucleo;
-	portalpreto_nucleo = scene->addSphere(new Vector(0.5,0.5,0.5));
-	portalpreto_nucleo->setName("Portal Negro Nucleo");
-	portalpreto_nucleo->addBehaviour(portalpretonucleo_behaviour);
+	portalpreto_behaviour = new PortalPretoBehaviour;
+	portalpreto_o = scene->addSphere(new Vector(5.5,5.5,-55.5));
+	portalpreto_o->setPosition(pos);
+	portalpreto_o->addBehaviour(portalpreto_behaviour);
 
-	portalpretoexterior_behaviour = new PortalPretoBehaviour_Exterior;
-	portalpreto_exterior = scene->addSphere(new Vector(3.0,3.0,3.0));
-	portalpreto_exterior->setName("Portal Negro Exterior");
-	portalpreto_exterior->addBehaviour(portalpretoexterior_behaviour);
+	
+
 }
 
 PortalPreto::~PortalPreto(void)
@@ -67,24 +52,12 @@ PortalPreto::~PortalPreto(void)
 
 }
 
-PortalPretoBehaviour_Nucleo::PortalPretoBehaviour_Nucleo()
+PortalPretoBehaviour::PortalPretoBehaviour()
 {
 
 }
 
-void PortalPretoBehaviour_Nucleo::update()
-{
-
-
-
-}
-
-PortalPretoBehaviour_Exterior::PortalPretoBehaviour_Exterior()
-{
-
-}
-
-void PortalPretoBehaviour_Exterior::update()
+void PortalPretoBehaviour::update()
 {
 
 
